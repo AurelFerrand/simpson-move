@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import FixCharacter from "./components/FixCharacter";
 import axios from "axios";
@@ -8,10 +7,10 @@ function App() {
   const [simpson, setSimpson] = useState("");
   const [move, setMove] = useState();
 
-  const [color, setColor] = useState('yellow');
+  const [color, setColor] = useState("yellow");
 
   const handleClick = (e) => {
-    setColor('#' + (((1 << 24) * Math.random()) | 0).toString(16));
+    setColor("#" + (((1 << 24) * Math.random()) | 0).toString(16));
     setMove(e);
   };
 
@@ -26,10 +25,15 @@ function App() {
 
   return (
     <div className="App">
-      <button style={{ background: color }} className="button" type="button" onClick={handleClick}>
+      <button
+        style={{ background: color }}
+        className="button"
+        type="button"
+        onClick={handleClick}
+      >
         Remove Simpson Character
       </button>
-      <FixCharacter simpson={simpson}  />
+      <FixCharacter simpson={simpson} />
     </div>
   );
 }
